@@ -1,11 +1,12 @@
 ﻿using GolBet.Entities;
 using GolBet.Entities.Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace GolBet.Repositories.Data;
 
-public class AppDbContext : DbContext
-{
+ public class AppDbContext : DbContext
+ {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     public DbSet<Team> Teams => Set<Team>();
@@ -67,5 +68,6 @@ public class AppDbContext : DbContext
         }
 
         return base.SaveChangesAsync(cancellationToken);
-    }
-}
+     }
+   }
+ 
