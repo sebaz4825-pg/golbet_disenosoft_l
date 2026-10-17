@@ -1,15 +1,12 @@
 ﻿// GolBet.Web/Controllers/TeamsController.cs 
 
+using GolBet.Repositories.Data;
 using GolBet.Services.DTOs;
 using GolBet.Services.Interfaces;
 
 using Microsoft.AspNetCore.Mvc;
 
-
-
 namespace GolBet.Web.Controllers;
-
-
 
 public class TeamsController : Controller
 

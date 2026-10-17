@@ -27,13 +27,21 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Matches" asp-action="Index">Partidos</a>
                         <li class="nav-item"> 
+                            </li>
+                            @if (User.IsInRole("Admin"))
 
-    <a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a> 
+                            {
 
-</li> 
-                        </li>
+                                <li class="nav-item">
+
+                                    <a class="nav-link" asp-controller="Teams" asp-action="Index">Equipos</a>
+
+                                </li>
+
+                            }
+                        
                     </ul>
-                    <!-- Aquí irá el enlace a Partidos (Módulo 3) y la sesión (Módulo 7) -->
+                    <partial name="_LoginPartial" />   <!-- Aquí irá el enlace a Partidos (Módulo 3) y la sesión (Módulo 7) -->
                 </div>
             </div>
         </nav>
