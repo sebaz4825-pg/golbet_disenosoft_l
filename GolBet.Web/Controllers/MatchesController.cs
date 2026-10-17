@@ -56,11 +56,6 @@ teamService)
 
     }
 
-    // GolBet.Web/Controllers/MatchesController.cs 
-
-    // (agregar; requiere inyectar ITeamService en el constructor) 
-    // SelectList 
-
     [Authorize(Roles = DbSeeder.AdminRole)]
   
     // GET /Matches/Create 
