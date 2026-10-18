@@ -20,10 +20,13 @@ public class MatchService : IMatchService
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<MatchDto>> GetBoardAsync(MatchStatus? status = null)
+    // Se agrega el parámetro opcional search y se pasa al repositorio
+    public async Task<IEnumerable<MatchDto>> GetBoardAsync(MatchStatus? status = null, string? search = null) // se modifica
     {
-        var matches = await _matchRepository.GetAllWithTeamsAsync(status);
-        return _mapper.Map<IEnumerable<MatchDto>>(matches);
+        {
+            var matches = await _matchRepository.GetAllWithTeamsAsync(status, search); // se modifca 
+            return _mapper.Map<IEnumerable<MatchDto>>(matches);
+        }
     }
     public async Task<MatchDetailDto?> GetDetailAsync(int id)
 

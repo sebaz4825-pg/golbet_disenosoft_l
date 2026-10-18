@@ -7,7 +7,8 @@ namespace GolBet.Repositories.Interfaces;
 
 public interface IMatchRepository : IGenericRepository<Match>
 {
-    Task<IEnumerable<Match>> GetAllWithTeamsAsync(MatchStatus? status = null);
+    // Agregamos el parámetro opcional 'search' para soportar la búsqueda por equipo
+    Task<IEnumerable<Match>> GetAllWithTeamsAsync(MatchStatus? status = null, string? search = null); // Se modifica
     Task<Match?> GetByIdWithDetailsAsync(int id);
 }
 
