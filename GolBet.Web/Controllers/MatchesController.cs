@@ -32,7 +32,7 @@ teamService)
     {
 
         ViewBag.CurrentStatus = status;
-        ViewBag.CurrentSearch = search; // <--- se agg (para conservar la búsqueda en el input)
+        ViewBag.CurrentSearch = search; //  se agg (para conservar la búsqueda en el input)
 
         var board = await _matchService.GetBoardAsync(status, search); // se agg search
 
